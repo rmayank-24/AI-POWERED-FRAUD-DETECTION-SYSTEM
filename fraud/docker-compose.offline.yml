@@ -1,0 +1,13 @@
+services:
+  # Run without Docker - for offline/network issues
+  fraud-detection-app:
+    image: python:3.11-slim
+    ports:
+      - "5050:5050"
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: python app.py
+    environment:
+      - PYTHONPATH=/app
+    restart: unless-stopped

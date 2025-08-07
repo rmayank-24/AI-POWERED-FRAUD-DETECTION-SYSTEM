@@ -1,0 +1,68 @@
+version: '3.8'
+
+# Development environment with hot-reload and debugging
+services:
+  fraud-detection-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5050:5050"
+      - "5678:5678"  # Debug port
+    volumes:
+      - .:/app
+      - /app/__pycache__
+      - /app/.pytest_cache
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+      - PYTHONPATH=/app
+    depends_on:
+      - mlflow-dev
+      - redis-dev
+    command: python -m debugpy --listen 0.0.0.0:5678 app.py
+
+  mlflow-dev:
+    image: python:3.11-slim
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/mlruns
+    command: >
+      sh -c "pip install mlflow && 
+      mlflow server --backend-store-uri sqlite:///mlflow.db 
+                   --default-artifact-root ./mlruns 
+                   --host 0.0.0.0 
+                   --port 5000"
+
+  redis-dev:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes
+
+  # Development database
+  postgres-dev:
+    image: postgres:15-alpine
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_DB=fraud_detection_dev
+      - POSTGRES_USER=fraud_user
+      - POSTGRES_PASSWORD=fraud_pass
+    volumes:
+      - postgres_dev_data:/var/lib/postgresql/data
+
+  # Development Jupyter
+  jupyter-dev:
+    image: jupyter/datascience-notebook:latest
+    ports:
+      - "8889:8888"
+    volumes:
+      - .:/home/jovyan/work
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    command: start-notebook.sh --NotebookApp.token='' --NotebookApp.password=''
+
+volumes:
+  postgres_dev_data:
