@@ -27,17 +27,17 @@ This is my **personal AI-powered fraud detection system** that I've built to dem
   <table>
     <tr>
       <td align="center">
-        <img src="./images/ml-models.png" width="100"/>
+        <img src="./images/image.png" width="100"/>
         <br><b>Multi-Model Ensemble</b>
         <br>XGBoost + Isolation Forest + GNN
       </td>
       <td align="center">
-        <img src="./images/real-time.png" width="100"/>
+        <img src="./images/image2.png" width="100"/>
         <br><b>Real-time Detection</b>
         <br>Sub-second response time
       </td>
       <td align="center">
-        <img src="./images/dashboard.png" width="100"/>
+        <img src="./images/image3.png" width="100"/>
         <br><b>Interactive Dashboard</b>
         <br>Real-time visualization
       </td>
@@ -66,10 +66,10 @@ graph TD
 <div align="center">
   <table>
     <tr>
-      <td><img src="./images/python.png" width="50"/></td>
-      <td><img src="./images/pytorch.png" width="50"/></td>
-      <td><img src="./images/flask.png" width="50"/></td>
-      <td><img src="./images/docker.png" width="50"/></td>
+      <td><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="50"/></td>
+      <td><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" width="50"/></td>
+      <td><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" width="50"/></td>
+      <td><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="50"/></td>
     </tr>
     <tr>
       <td>Python 3.11+</td>
