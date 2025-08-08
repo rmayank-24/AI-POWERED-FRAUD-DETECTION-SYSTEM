@@ -18,7 +18,7 @@
 This is my **personal AI-powered fraud detection system** that I've built to demonstrate advanced machine learning capabilities in financial security. The system combines multiple ML models including XGBoost, Isolation Forest, and Graph Neural Networks to detect fraudulent transactions in real-time.
 
 <div align="center">
-  <img src="./images/project-banner.png" alt="Project Banner" width="800"/>
+  <img src="./images/image.png" alt="Project Banner" width="800"/>
 </div>
 
 ## 🚀 Key Features
