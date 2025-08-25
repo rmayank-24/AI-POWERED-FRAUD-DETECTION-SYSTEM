@@ -1,7 +1,8 @@
 <div align="center">
 
 # 🛡️ AI-Powered Transaction Fraud Detection System
-<img width="2816" height="1536" alt="fraud_banner" src="https://github.com/user-attachments/assets/d7af94cb-8fca-4e9e-8647-5caf23dfc0f3" />
+<img width="2816" height="1536" alt="fraud_banner" src="https://github.com/user-attachments/assets/222e4765-ca0a-4986-8e56-4b70c2f3a13d" />
+
 
 **Personal Project by [@rmayank-24](https://github.com/rmayank-24)**
 
